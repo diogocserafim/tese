@@ -1,0 +1,290 @@
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage[american]{babel}
+
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%extended enumerate, such as \begin{compactenum}
+\usepackage{paralist}
+
+%put figures inside a text
+%\usepackage{picins}
+%use
+%\piccaptioninside
+%\piccaption{...}
+%\parpic[r]{\includegraphics ...}
+%Text...
+
+%Sorts the citations in the brackets
+%\usepackage{cite}
+
+%for easy quotations: \enquote{text}
+\usepackage{csquotes}
+
+\usepackage[T1]{fontenc}
+
+%enable margin kerning
+\usepackage{microtype}
+
+%better font, similar to the default springer font
+\usepackage[%
+rm={oldstyle=false,proportional=true},%
+sf={oldstyle=false,proportional=true},%
+tt={oldstyle=false,proportional=true,variable=true},%
+qt=false%
+]{cfr-lm}
+%
+%if more space is needed, exchange cfr-lm by mathptmx
+%\usepackage{mathptmx}
+
+%for demonstration purposes only
+\usepackage[math]{blindtext}
+
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+
+\usepackage[
+%pdfauthor={},
+%pdfsubject={},
+%pdftitle={},
+%pdfkeywords={},
+bookmarks=false,
+breaklinks=true,
+colorlinks=true,
+linkcolor=black,
+citecolor=black,
+urlcolor=black,
+%pdfstartpage=19,
+pdfpagelayout=SinglePage
+]{hyperref}
+%enables correct jumping to figures when referencing
+\usepackage[all]{hypcap}
+
+\usepackage[inline]{enumitem}
+
+
+\usepackage{enumitem}
+\setlist[itemize,1]{label={\fontfamily{cmr}\fontencoding{T1}\selectfont\textbullet}}
+
+\usepackage[capitalise,nameinlink]{cleveref}
+%Nice formats for \cref
+\crefname{section}{Sect.}{Sect.}
+\Crefname{section}{Section}{Sections}
+\crefname{figure}{Fig.}{Fig.}
+\Crefname{figure}{Figure}{Figures}
+
+\usepackage{amsmath}
+
+%Table of contents
+% make a proper TOC despite llncs
+\setcounter{tocdepth}{3}
+\makeatletter
+\renewcommand*\l@author[2]{}
+\renewcommand*\l@title[2]{}
+\makeatletter
+
+
+
+
+\usepackage{xspace}
+\usepackage{cite}
+%\newcommand{\eg}{e.\,g.\xspace}
+%\newcommand{\ie}{i.\,e.\xspace}
+\newcommand{\eg}{e.\,g.,\ }
+\newcommand{\ie}{i.\,e.,\ }
+
+\setcounter{secnumdepth}{3}
+
+%introduce \powerset - hint by http://matheplanet.com/matheplanet/nuke/html/viewtopic.php?topic=136492&post_id=997377
+\DeclareFontFamily{U}{MnSymbolC}{}
+\DeclareSymbolFont{MnSyC}{U}{MnSymbolC}{m}{n}
+\DeclareFontShape{U}{MnSymbolC}{m}{n}{
+    <-6>  MnSymbolC5
+   <6-7>  MnSymbolC6
+   <7-8>  MnSymbolC7
+   <8-9>  MnSymbolC8
+   <9-10> MnSymbolC9
+  <10-12> MnSymbolC10
+  <12->   MnSymbolC12%
+}{}
+\DeclareMathSymbol{\powerset}{\mathord}{MnSyC}{180}
+
+%improve wrapping of URLs - hint by http://tex.stackexchange.com/a/10419/9075
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+
+% correct bad hyphenation here
+\hyphenation{optical networks semiconductor}
+
+\begin{document}
+
+%Works on MiKTeX only
+%hint by http://goemonx.blogspot.de/2012/01/pdflatex-ligaturen-und-copynpaste.html
+%also http://tex.stackexchange.com/questions/4397/make-ligatures-in-linux-libertine-copyable-and-searchable
+%This allows a copy'n'paste of the text from the paper
+\input glyphtounicode.tex
+\pdfgentounicode=1
+
+\title{"Development of a new Information System for a Nonprofit Organization in the Cloud"}
+%If Title is too long, use \titlerunning
+%\titlerunning{Short Title}
+
+%Single insitute
+\author{Diogo André Cardoso Serafim\\
+\textit{diogoserafim@tecnico.ulisboa.pt}
+\\Advisor: José Borbinha 
+\\Co-Advisor: Por definir}
+%If there are too many authors, use \authorrunning
+%\authorrunning{First Author et al.}
+\institute{Instituto Superior Técnico}
+\authorrunning{Cardoso Serafim et al.}
+
+
+%Multiple insitutes
+%Currently disabled
+%
+\iffalse
+%Multiple institutes are typeset as follows:
+\author{Firstname Lastname\inst{1} \and Firstname Lastname\inst{2} }
+%If there are too many authors, use \authorrunning
+
+
+\institute{
+Insitute 1\\
+\email{...}\and
+Insitute 2\\
+\email{...}
+}
+\fi
+			
+\maketitle
+
+
+\begin{abstract}
+
+\iffalse
+Network security threats are becoming more and more proeminent and the connection links at ISPs are getting increasingly fast. Traditional network intrusion detection systems are either signature-based or behavior-based, which means looking up for known intrusion signatures in the packets, or detecting deviation from a normal behavior, respectively. With the exponential increase of network security threats, these IDSs are not able to cope with their growth, as they are only able to detect specific intrusions that are previously known. Also, most of them rely on payload inspection, that can be a bottleneck in the detection in real-time, and, now that almost every communication is done through encrypted messages, it is almost impossible to interpret the observed payload. In order to counter these limitations, our IDS will detect attacks using flows, which are defined as being a set of packets that passes a specific observation point in a given time period, with common characteristics. This work will therefore present a proposal for a flow-based IDS capable of detecting attacks without any \textit{a priori} knowledge, and therefore countering the limitations present in traditional IDSs. The results from this proposed system are to be validated with a real-world dataset provided by the Portuguese ISP Vodafone.
+\fi
+Este projeto consiste na elaboração de um sistema informático para uma associação sem fins lucrativos e de apoio social e ambiental. Surge da necessidade que a associação possui para a informatização dos seus processos atuais. Para o desenvolvimento do novo sistema é preciso, em primeiro lugar, efetuar um levantamento dos problemas que existem. Atualmente a associação gere todas as informações relativas aos seus beneficiários através de vários documentos em Excel. Isto resulta num sistema desatualizado, demorado e desordenado. Sé com a análise dos problemas que resultam do sistema atualmente utilizado, podemos obter uma melhor compreensão do seu funcionameto e quais as melhorias a introduzir. Esta proposta de solucão temo o objetivo de disponibilizar um sistema que reflita as etapas anteriores e adicione valor de negócio à associação. Estão refletidas as restrições do cliente, descreve os requisitos a considerar, apresenta uma arquitetura da solução e refere as principais preocupações a nível de seguraçaa do sistema. Finalmente atendendo às necessidades do cliente, e com base no método de desenvolvimento agil, apresenta-se um gráfico de Gantt que contem as fases de implementacao do projeto e a duracao do mesmo.
+\end{abstract}
+
+\keywords{Cloud Computing, Google, Authentication }
+\let\cleardoublepage\relax
+\tableofcontents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}\label{sec:introduction}
+\input{section1.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Related Work}\label{sec:related}
+
+\input{section2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Google API em Detalhe}\label{sec:proposal}
+
+%\input{section3.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Methodologies and Best Practices for Software Development}\label{sec:proposal}
+
+\input{section4.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Overview of The Proposal}\label{sec:evaluation}
+
+%\input{section2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Evaluation}\label{sec:schedule}
+
+%\input{section3.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Scheduling of Future Work}\label{sec:schedule}
+
+%\input{section3.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}\label{sec:conclusion}
+
+%\input{section2.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{thebibliography}{9}
+
+\bibitem{cloud:tweaks} 
+  CloudTweaks,
+  Cloud Computing - Demystifying SAAS, PAAS AND IAAS,
+  http://cloudtweaks.com/2010/05/cloud-computing-demystifying-saas-paas-and-iaas/,
+  May 3,2010.
+  
+\bibitem{cloud:SS}
+Nanyang Technological University, SINGAPORE (2010). Cloud computing: A perspective study. In New Generation Computing. 
+
+\bibitem{Zhang2010}
+Zhang, Q., Cheng, L., Boutaba, R. (2010). Cloud computing: State-of-the-art and research challenges. Journal of Internet Services and Applications.
+
+
+\bibitem{iaas:AmazonEC2} 
+Amazon Elastic Computing Cloud, aws.amazon.com/ec2,
+
+\bibitem{iaas:GoGrid}
+Cloud Hosting, CLoud Computing and Hybrid Infrastructure from GoGrid, http://www.gogrid.com
+
+\bibitem{iaas:FlexiScale}
+FlexiScale Cloud Comp and Hosting, www.flexiscale.com
+
+\bibitem{paas:Force}
+Salesforce CRM, http://www.salesforce.com/platform
+
+\bibitem{saas:RackSpace}
+Dedicated Server, Managed Hosting, Web Hosting by Rackspace Hosting, http://www.rackspace.com
+
+\bibitem{cloud:openID}
+The Foundation of Internet Identity, A very brief history of OpenID Connect, http://openid.net/get-an-openid/what-is-openid/
+
+\bibitem{cloud:Archi}
+Cloud, Networking \& Data Analytics,
+All about cloud computing, networking and data, analytics, http://cloudcomputingnet.com/cloud-computing-architecture/
+
+\bibitem{cloud:cloudStorageGateway}
+Death of a middleman: Cloud storage gateways – and their evolution, http://www.theregister.co.uk/2015/05/25/cloud\_storage\_gateways/
+
+\bibitem{cloud:netSuite}
+NetSuite: Business Software, Business Management Software, http://www.netsuite.com/portal/home.shtml
+
+\bibitem{agile:1}
+ B. Bohem, “Making a difference in the software century,” IEEE Computer, pp. 78-84, Mar. 2008
+ 
+\bibitem{method:Tommy2016}
+Tommy, R., Mhaisekar, M., Kallepally, S., Varghese, L., Ahmed, S., \& Somaraju, M. D. (2016). Dynamic quality control in agile methodology for improving the quality. 2015 IEEE International Conference on Computer Graphics, Vision and Information Security, CGVIS 2015, 233–236.
+
+\bibitem{waterfall:piecemeal}
+ John Stark, Product Lifecycle Management: 21st Century Paradigm for Product Realisation, 2nd Edition,
+ 
+ \bibitem{agile:manifesto}
+ Fowler, M., \& Highsmith, J. (2001). The agile manifesto. Software Development, 9(August), 28–35. 
+
+\bibitem{agile:scrum}
+Manuja, M. (2014). Moving agile based projects on Cloud. 2014 IEEE International Advance Computing Conference (IACC), 1392–1397. 
+
+\end{thebibliography}
+
+\bibliographystyle{splncs03}
+\bibliography{paper}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
