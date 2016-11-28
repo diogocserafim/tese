@@ -50,7 +50,7 @@ Despite the success of the model in large and complex projects, it has a number 
 \end{itemize}
 
 \subsection{Agile Methodology}
-Agile methodologies were developed to overcome the limitations of the Waterfall methodology. Instead of extensive planning and design up front, agile follows an incremental and iterative approach to development, where requirements and solutions evolve through collaboration between self-organizing, cross-functional teams - incorporating planners, designers, developers and testers - and customer. The Agile development refers to any development process that is aligned with the concepts of Agile Manifesto that says \cite{agile:manifesto}:\\
+Agile methodologies were developed to overcome the limitations of the Waterfall methodology. Instead of extensive planning and design up front, agile follows an incremental and iterative approach to development, where requirements and solutions evolve through collaboration between self-organizing, cross-functional teams - incorporating planners, designers, developers and testers - and customer. In this case, developers start with a simplified project design, and then begin to work on small modules. The work is done in weekly or monthly sprints, and at the end of each sprint, project priorities are evaluated and tests are performed. The use of sprints allow for bugs to be discovery, and also customer feedback to be incorporated into the design before the next sprint. The Agile development refers to any development process that is aligned with the concepts of Agile Manifesto that says \cite{agile:manifesto}:\\
 
 \textit{"We are uncovering better ways of developing software by doing it and helping others do it. We value:}
 
@@ -67,12 +67,16 @@ The main features of the most known agile methodologies are described below.
 
 is an iterative and incremental agile software development framework that makes use of software patterns, that are useful for project development in short time and where requirements are constantly in change. The scrum model comprises the existence of a series of iterations, also called Sprints, that are time-boxed which means that the duration is fixed, normally between 2 and 4 weeks, with two weeks being the most common. 
 
+\iffalse
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{scrumDevelopment}
     \caption{Scrum Software Development Process}
     \label{fig:waterfall}
 \end{figure}
+
+\fi
 
 The process starts with the Product Catalog, where the product owner, which represents the stakeholders and customers, is responsible for understanding business and market requirements, and based on that creates a prioritized list of software requirements, and adds them to the Product Catalog. The Product owner maintains the Product Backlog up to date and at the quality level that the project team requires.
 
@@ -87,18 +91,13 @@ Another activity in scrum project management is the sprint retrospective at the 
 
 \subsubsection{Extreme Programming (XP)}
 
-is a software development methodology whose main goal is to improve software quality and responsiveness to changing customer requirements. 
-XP uses an object-oriented approach as its paradigm of
-drawing. The process consists of four activities: Planning, Project,
-Encoding and Testing, which are repeated iterating through iteration.
-Planning: It is created by the client, a set of stories that
-Describe features and functionalities necessary for the software to be
-built. Each story gives input to the methodology control system and is
-Indexed and the client assigns it a priority value. Team members
-Analyze this list and assign it costs if the story requires more than three
-The client is asked to divide it. New stories can be added
-any time. The next step is the team in collaboration with the customer
-Decide which stories will get ready in the next iteration and on what date.
+is a software development methodology whose main goal is to improve software quality and responsiveness to changing customer requirements. As paradigm of drawing, XP uses an object-oriented approach and the process consists of four main activities: Planning, Designing, Coding and Testing, which are repeated in each iteration.
+
+In the planning process, it is created by the customer, a set of stories that describe features and functionalities necessary for the software implementation. Each story serves as an input to the methodology control system and is indexed and assigned with a priority value. Based on a list of user stories, the development team assign a cost to each individual story, based on the time necessary to complete the requirements.If the story requires more than three weeks to be developed, the team members ask to the client to make a split in the history. Then, the development team converts user stories into iterations that covers a small part of the functionality required. 
+After that, the next step is to decide (in collaboration with the customer), which stories will be done until the next iteration, and the deadline to do them.
+
+In the designing stage, each iteration must follow certain guidelines so it's important to create a design structure that organizes the logic in the system so too many dependencies in the system can be avoided. The inherent philosophy is to keep it simple 
+
 Project: The inherent philosophy is KIS (keep it simple), it is discouraged
 Extra functionality because the developer
 Thinks that later should be accurate. Often prototypes are generated,
@@ -106,6 +105,7 @@ Part of the project or of the whole. XP encourages
 Refraction, a construction / design technique. (It is the process of changing and
 Improve the internal software system, without altering the behavior
 external.)
+
 Encoding: Before the code, it recommends the process, that a
 Battery of unit tests so that the story is satisfied. Then the focus of the
 Programmers is the satisfaction of these unit tests. For coding XP,
@@ -114,6 +114,7 @@ Recommends that it be done in pairs. (Two heads work better than
 Scientific work that bought it to work in pairs, does not
 Referring to Fig.
 Yield, on the contrary usually more productivity is achieved).
+
 Test: Unit tests are maintained over the various iterations and
 Become part of a battery of regression tests, which is no longer
 That all unit tests grouped together to be periodically tested for
